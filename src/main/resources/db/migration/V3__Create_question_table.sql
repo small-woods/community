@@ -1,6 +1,6 @@
-create table quest
+create table question
 (
-	id int auto_increment,
+	id int auto_increment primary key,
 	title varchar(50),
 	description text,
 	gmt_create bigint,
@@ -10,6 +10,4 @@ create table quest
 	view_count int default 0,
 	like_count int default 0,
 	tag varchar(256),
-	constraint quest_pk
-		primary key (id)
 );
