@@ -54,12 +54,11 @@ public class PublishController {
         }
         Cookie[] cookies = request.getCookies();
         User user = null;
-        if(cookies != null){
+        if(cookies != null &&cookies.length !=0){
             for (Cookie cookie : cookies){
                 if(cookie.getName().equals("token")){
                     String token = cookie.getValue();
                     user = userMapper.findByToken(token);
-//                    System.out.println("publish中未登录情况下的user的token值： "+user.getToken());
                     if(user != null){
                         request.getSession().setAttribute("user",user);
                     }
