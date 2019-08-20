@@ -10,42 +10,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">小木社区</span>
-            </button>
-            <a class="navbar-brand" href="/">小木社区</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="搜索问题">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li th:if="${session.user != null}">
-                    <a href="/publish">发布</a>
-                </li>
-                <li class="dropdown" th:if="${session.user !=null}">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="${session.user.getName()}"><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">消息中心</a></li>
-                        <li><a href="#">个人资料</a></li>
-                        <li><a href="#">退出登录</a></li>
-                    </ul>
-                </li>
-                <li th:if="${session.user ==null}">
-                    <a href="https://github.com/login/oauth/authorize?client_id=f68b0ae43117c30c4948&&redirect_url=http://localhost:8888/callback&&scope=user&&state=1">登录</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</nav>
+<div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
@@ -79,9 +44,9 @@
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>问题发起指南</h3>
-            • 为按钮添加不同的颜色只是一种视觉上的信息表达方式
-            • 确保通过颜色表达的信息或者通过内容自身表达出来
-            • 或者通过其他方式 -- 例如通过 .sr-only 类隐藏的额外文本 -- 表达出来。
+            • 为按钮添加不同的颜色只是一种视觉上的信息表达方式 <br>
+            • 确保通过颜色表达的信息或者通过内容自身表达出来 <br>
+            • 或者通过其他方式 -- 例如通过 .sr-only 类隐藏的额外文本 -- 表达出来。 <br>
 
             • 当按钮处于激活状态时，其表现为被按压下去（底色更深、边框夜色更深、向内投射阴影）。对于button元素，是通过 :active 状态实现的。
         </div>
